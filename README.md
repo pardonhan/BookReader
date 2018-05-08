@@ -1,3 +1,12 @@
+# 更新
+## 依赖
+>1. 更新了项目依赖的版本和部分代码
+>2. 添加了权限验证，并更新了系统权限调用代码
+
+## 计划
+>1. 做出仿真书效果，左右页面显示
+>2. 优化代码性能 
+
 项目地址：[https://github.com/JustWayward/BookReader](https://github.com/JustWayward/BookReader)
 
 # BookReader
