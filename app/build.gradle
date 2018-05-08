@@ -53,6 +53,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':EasyAdapterLibrary')
+    implementation project(':easypermissions')
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support:design:27.1.0'
     implementation "com.android.support:support-v4:27.1.0"

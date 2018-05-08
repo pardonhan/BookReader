@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BookReader.iml" filepath="$PROJECT_DIR$/BookReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/EasyAdapterLibrary/EasyAdapterLibrary.iml" filepath="$PROJECT_DIR$/EasyAdapterLibrary/EasyAdapterLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easypermissions/easypermissions.iml" filepath="$PROJECT_DIR$/easypermissions/easypermissions.iml" />
     </modules>
   </component>
 </project>
