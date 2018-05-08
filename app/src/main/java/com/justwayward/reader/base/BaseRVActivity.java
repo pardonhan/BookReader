@@ -29,7 +29,7 @@ import com.justwayward.reader.view.recyclerview.swipe.OnRefreshListener;
 
 import java.lang.reflect.Constructor;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @author yuyh.
@@ -37,7 +37,7 @@ import butterknife.Bind;
  */
 public abstract class BaseRVActivity<T> extends BaseActivity implements OnLoadMoreListener, OnRefreshListener, RecyclerArrayAdapter.OnItemClickListener {
 
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     protected EasyRecyclerView mRecyclerView;
     protected RecyclerArrayAdapter<T> mAdapter;
 

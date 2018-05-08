@@ -37,7 +37,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
@@ -54,12 +54,12 @@ public class ReadEPubActivity extends BaseActivity implements ReaderCallback {
         context.startActivity(intent);
     }
 
-    @Bind(R.id.epubViewPager)
+    @BindView(R.id.epubViewPager)
     DirectionalViewpager viewpager;
 
-    @Bind(R.id.toolbar_menu)
+    @BindView(R.id.toolbar_menu)
     View ivMenu;
-    @Bind(R.id.toolbar_title)
+    @BindView(R.id.toolbar_title)
     TextView tvTitle;
 
     private EPubReaderAdapter mAdapter;

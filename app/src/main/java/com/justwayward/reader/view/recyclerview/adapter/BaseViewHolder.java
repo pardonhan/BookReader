@@ -34,7 +34,8 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
+import com.yuyh.easyadapter.GlideApp;
 import com.yuyh.easyadapter.glide.GlideCircleTransform;
 import com.yuyh.easyadapter.glide.GlideRoundTransform;
 
@@ -163,25 +164,26 @@ abstract public class BaseViewHolder<M> extends RecyclerView.ViewHolder {
 
     public BaseViewHolder setImageUrl(int viewId, String imgUrl) {
         ImageView view = getView(viewId);
-        Glide.with(mContext).load(imgUrl).into(view);
+        // TODO
+        GlideApp.with(mContext).load(imgUrl).into(view);
         return this;
     }
 
     public BaseViewHolder setImageUrl(int viewId, String imgUrl, int placeHolderRes) {
         ImageView view = getView(viewId);
-        Glide.with(mContext).load(imgUrl).placeholder(placeHolderRes).into(view);
+        GlideApp.with(mContext).load(imgUrl).placeholder(placeHolderRes).into(view);
         return this;
     }
 
     public BaseViewHolder setCircleImageUrl(int viewId, String imgUrl, int placeHolderRes) {
         ImageView view = getView(viewId);
-        Glide.with(mContext).load(imgUrl).placeholder(placeHolderRes) .transform(new GlideCircleTransform(mContext)).into(view);
+        GlideApp.with(mContext).load(imgUrl).placeholder(placeHolderRes) .transform(new GlideCircleTransform(mContext)).into(view);
         return this;
     }
 
     public BaseViewHolder setRoundImageUrl(int viewId, String imgUrl, int placeHolderRes) {
         ImageView view = getView(viewId);
-        Glide.with(mContext).load(imgUrl).placeholder(placeHolderRes) .transform(new GlideRoundTransform(mContext)).into(view);
+        GlideApp.with(mContext).load(imgUrl).placeholder(placeHolderRes) .transform(new GlideRoundTransform(mContext)).into(view);
         return this;
     }
 

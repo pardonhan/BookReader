@@ -19,7 +19,7 @@ import com.justwayward.reader.ui.activity.ReadEPubActivity;
 import com.justwayward.reader.view.epubview.ObservableWebView;
 import com.justwayward.reader.view.epubview.VerticalSeekbar;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import nl.siegmann.epublib.domain.Book;
 
 /**
@@ -33,9 +33,9 @@ public class EPubReaderFragment extends BaseFragment {
     private static final String BUNDLE_EPUB_FILE_NAME = "filename";
     private static final String BUNDLE_IS_SMIL_AVAILABLE = "smilavailable";
 
-    @Bind(R.id.scrollSeekbar)
+    @BindView(R.id.scrollSeekbar)
     VerticalSeekbar mScrollSeekbar;
-    @Bind(R.id.contentWebView)
+    @BindView(R.id.contentWebView)
     ObservableWebView mWebview;
 
     private int mPosition = -1;

@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @author yuyh.
@@ -43,9 +43,9 @@ public class ReadCHMActivity extends BaseActivity {
         context.startActivity(intent);
     }
 
-    @Bind(R.id.progressBar)
+    @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
-    @Bind(R.id.webview)
+    @BindView(R.id.webview)
     WebView mWebView;
 
     private String chmFileName;

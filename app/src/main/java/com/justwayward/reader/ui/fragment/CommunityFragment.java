@@ -34,11 +34,11 @@ import com.justwayward.reader.view.SupportDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class CommunityFragment extends BaseFragment implements OnRvItemClickListener<FindBean> {
 
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     RecyclerView mRecyclerView;
 
     private FindAdapter mAdapter;

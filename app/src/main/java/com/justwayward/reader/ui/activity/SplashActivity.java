@@ -23,12 +23,15 @@ import android.widget.TextView;
 
 import com.justwayward.reader.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @Bind(R.id.tvSkip)
+    private Unbinder unbinder;
+
+    @BindView(R.id.tvSkip)
     TextView tvSkip;
 
     private boolean flag = false;
@@ -38,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
 
         runnable = new Runnable() {
             @Override
@@ -70,6 +73,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onDestroy();
         flag = true;
         tvSkip.removeCallbacks(runnable);
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }

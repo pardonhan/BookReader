@@ -25,7 +25,7 @@ import com.justwayward.reader.view.SelectionLayout;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 女生区
@@ -36,7 +36,7 @@ public class GirlBookDiscussionActivity extends BaseCommuniteActivity {
         context.startActivity(new Intent(context, GirlBookDiscussionActivity.class));
     }
 
-    @Bind(R.id.slOverall)
+    @BindView(R.id.slOverall)
     SelectionLayout slOverall;
 
     @Override

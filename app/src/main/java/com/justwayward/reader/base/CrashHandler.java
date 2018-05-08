@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2016 JustWayward Team
  * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,6 +36,7 @@ import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -186,7 +187,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
         sb.append(result);
         sb.append("--------------------end---------------------------");
         LogUtils.e(sb.toString());
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
         String fileName = format.format(new Date()) + ".log";
         File file = new File(FileUtils.createRootPath(mContext) + "/log/" + fileName);
         FileUtils.createFile(file);

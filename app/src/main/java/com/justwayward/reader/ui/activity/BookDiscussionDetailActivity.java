@@ -25,7 +25,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
 import com.justwayward.reader.R;
 import com.justwayward.reader.base.BaseRVActivity;
 import com.justwayward.reader.base.Constant;
@@ -42,6 +42,7 @@ import com.justwayward.reader.utils.FormatUtils;
 import com.justwayward.reader.view.BookContentTextView;
 import com.justwayward.reader.view.SupportDividerItemDecoration;
 import com.justwayward.reader.view.recyclerview.adapter.RecyclerArrayAdapter;
+import com.yuyh.easyadapter.GlideApp;
 import com.yuyh.easyadapter.glide.GlideCircleTransform;
 
 import java.util.ArrayList;
@@ -49,15 +50,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 综合讨论区详情
  */
 public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.CommentsBean>
         implements BookDiscussionDetailContract.View, OnRvItemClickListener<CommentList.CommentsBean> {
-
+    private Unbinder unbinder;
     private static final String INTENT_ID = "id";
 
     public static void startActivity(Context context, String id) {
@@ -84,25 +86,25 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
     }
 
     static class HeaderViewHolder {
-        @Bind(R.id.ivBookCover)
+        @BindView(R.id.ivBookCover)
         ImageView ivAvatar;
-        @Bind(R.id.tvBookTitle)
+        @BindView(R.id.tvBookTitle)
         TextView tvNickName;
-        @Bind(R.id.tvTime)
+        @BindView(R.id.tvTime)
         TextView tvTime;
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.tvContent)
+        @BindView(R.id.tvContent)
         BookContentTextView tvContent;
-        @Bind(R.id.tvBestComments)
+        @BindView(R.id.tvBestComments)
         TextView tvBestComments;
-        @Bind(R.id.rvBestComments)
+        @BindView(R.id.rvBestComments)
         RecyclerView rvBestComments;
-        @Bind(R.id.tvCommentCount)
+        @BindView(R.id.tvCommentCount)
         TextView tvCommentCount;
 
-        public HeaderViewHolder(View view) {
-            ButterKnife.bind(this, view);   //view绑定
+        public HeaderViewHolder(View view,Unbinder unbinder) {
+            unbinder = ButterKnife.bind(this, view);   //view绑定
         }
     }
 
@@ -148,7 +150,7 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
 
             @Override
             public void onBindView(View headerView) {
-                headerViewHolder = new HeaderViewHolder(headerView);
+                headerViewHolder = new HeaderViewHolder(headerView,unbinder);
             }
         });
 
@@ -156,7 +158,7 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
 
     @Override
     public void showBookDisscussionDetail(Disscussion disscussion) {
-        Glide.with(mContext)
+        GlideApp.with(mContext)
                 .load(Constant.IMG_BASE_URL + disscussion.post.author.avatar)
                 .placeholder(R.drawable.avatar_default)
                 .transform(new GlideCircleTransform(mContext))
@@ -210,7 +212,8 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(headerViewHolder);
+       // ButterKnife.unbind(headerViewHolder);
+        unbinder.unbind();
         if (mPresenter != null) {
             mPresenter.detachView();
         }

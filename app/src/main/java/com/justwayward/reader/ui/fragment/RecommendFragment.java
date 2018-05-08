@@ -56,16 +56,16 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class RecommendFragment extends BaseRVFragment<RecommendPresenter, Recommend.RecommendBooks> implements RecommendContract.View, RecyclerArrayAdapter.OnItemLongClickListener {
 
-    @Bind(R.id.llBatchManagement)
+    @BindView(R.id.llBatchManagement)
     LinearLayout llBatchManagement;
-    @Bind(R.id.tvSelectAll)
+    @BindView(R.id.tvSelectAll)
     TextView tvSelectAll;
-    @Bind(R.id.tvDelete)
+    @BindView(R.id.tvDelete)
     TextView tvDelete;
 
     private boolean isSelectAll = false;

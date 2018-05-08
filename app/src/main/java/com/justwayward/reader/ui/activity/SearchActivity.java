@@ -54,7 +54,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -69,19 +69,19 @@ public class SearchActivity extends BaseRVActivity<SearchDetail.SearchBooks> imp
                 .putExtra(INTENT_QUERY, query));
     }
 
-    @Bind(R.id.tvChangeWords)
+    @BindView(R.id.tvChangeWords)
     TextView mTvChangeWords;
-    @Bind(R.id.tag_group)
+    @BindView(R.id.tag_group)
     TagGroup mTagGroup;
-    @Bind(R.id.rootLayout)
+    @BindView(R.id.rootLayout)
     LinearLayout mRootLayout;
-    @Bind(R.id.layoutHotWord)
+    @BindView(R.id.layoutHotWord)
     RelativeLayout mLayoutHotWord;
-    @Bind(R.id.rlHistory)
+    @BindView(R.id.rlHistory)
     RelativeLayout rlHistory;
-    @Bind(R.id.tvClear)
+    @BindView(R.id.tvClear)
     TextView tvClear;
-    @Bind(R.id.lvSearchHistory)
+    @BindView(R.id.lvSearchHistory)
     ListView lvSearchHistory;
 
     @Inject

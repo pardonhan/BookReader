@@ -74,16 +74,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * https://github.com/JustWayward/BookReader
  */
 public class MainActivity extends BaseActivity implements MainContract.View, LoginPopupWindow.LoginTypeListener {
 
-    @Bind(R.id.indicator)
+    @BindView(R.id.indicator)
     RVPIndicator mIndicator;
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager mViewPager;
 
     private List<Fragment> mTabContents;

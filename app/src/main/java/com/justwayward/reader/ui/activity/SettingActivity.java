@@ -34,7 +34,7 @@ import com.justwayward.reader.manager.EventManager;
 import com.justwayward.reader.manager.SettingManager;
 import com.justwayward.reader.utils.SharedPreferencesUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -46,13 +46,13 @@ public class SettingActivity extends BaseActivity {
         context.startActivity(new Intent(context, SettingActivity.class));
     }
 
-    @Bind(R.id.mTvSort)
+    @BindView(R.id.mTvSort)
     TextView mTvSort;
-    @Bind(R.id.tvFlipStyle)
+    @BindView(R.id.tvFlipStyle)
     TextView mTvFlipStyle;
-    @Bind(R.id.tvCacheSize)
+    @BindView(R.id.tvCacheSize)
     TextView mTvCacheSize;
-    @Bind(R.id.noneCoverCompat)
+    @BindView(R.id.noneCoverCompat)
     SwitchCompat noneCoverCompat;
 
 

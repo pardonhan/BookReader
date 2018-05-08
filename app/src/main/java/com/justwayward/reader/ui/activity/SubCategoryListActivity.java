@@ -47,7 +47,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @author yuyh.
@@ -62,9 +62,9 @@ public class SubCategoryListActivity extends BaseActivity implements SubCategory
 
     private String currentMinor = "";
 
-    @Bind(R.id.indicatorSub)
+    @BindView(R.id.indicatorSub)
     RVPIndicator mIndicator;
-    @Bind(R.id.viewpagerSub)
+    @BindView(R.id.viewpagerSub)
     ViewPager mViewPager;
 
     @Inject

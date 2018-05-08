@@ -36,9 +36,11 @@ import com.justwayward.reader.utils.StatusBarCompat;
 import com.justwayward.reader.view.loadding.CustomDialog;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    private Unbinder unbinder;
     public Toolbar mCommonToolbar;
 
     protected Context mContext;
@@ -58,7 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         transparent19and20();
         mContext = this;
-        ButterKnife.bind(this);
+        unbinder = ButterKnife.bind(this);
         setupActivityComponent(ReaderApplication.getsInstance().getAppComponent());
         mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
         if (mCommonToolbar != null) {
@@ -101,7 +103,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
         dismissDialog();
     }
 

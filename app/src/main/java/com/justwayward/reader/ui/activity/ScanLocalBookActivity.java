@@ -42,7 +42,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 扫描本地书籍
@@ -56,7 +56,7 @@ public class ScanLocalBookActivity extends BaseActivity implements RecyclerArray
         context.startActivity(new Intent(context, ScanLocalBookActivity.class));
     }
 
-    @Bind(R.id.recyclerview)
+    @BindView(R.id.recyclerview)
     EasyRecyclerView mRecyclerView;
 
     private RecommendAdapter mAdapter;

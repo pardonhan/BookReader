@@ -52,18 +52,18 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class SubjectBookListActivity extends BaseActivity implements SubjectBookListContract.View, OnRvItemClickListener<String> {
 
-    @Bind(R.id.indicatorSubject)
+    @BindView(R.id.indicatorSubject)
     RVPIndicator mIndicator;
-    @Bind(R.id.viewpagerSubject)
+    @BindView(R.id.viewpagerSubject)
     ViewPager mViewPager;
-    @Bind(R.id.rsvTags)
+    @BindView(R.id.rsvTags)
     ReboundScrollView rsvTags;
 
-    @Bind(R.id.rvTags)
+    @BindView(R.id.rvTags)
     RecyclerView rvTags;
     private SubjectTagsAdapter mTagAdapter;
     private List<BookListTags.DataBean> mTagList = new ArrayList<>();

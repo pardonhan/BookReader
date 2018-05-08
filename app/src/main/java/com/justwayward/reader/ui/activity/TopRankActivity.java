@@ -35,13 +35,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class TopRankActivity extends BaseActivity implements TopRankContract.View {
 
-    @Bind(R.id.elvFeMale)
+    @BindView(R.id.elvFeMale)
     ExpandableListView elvFeMale;
-    @Bind(R.id.elvMale)
+    @BindView(R.id.elvMale)
     ExpandableListView elvMale;
 
     private List<RankingList.MaleBean> maleGroups = new ArrayList<>();

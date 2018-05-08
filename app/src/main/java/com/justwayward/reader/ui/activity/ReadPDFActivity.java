@@ -27,7 +27,7 @@ import com.justwayward.reader.view.pdfview.PDFViewPager;
 
 import java.io.File;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class ReadPDFActivity extends BaseActivity {
 
@@ -38,7 +38,7 @@ public class ReadPDFActivity extends BaseActivity {
         context.startActivity(intent);
     }
 
-    @Bind(R.id.llPdfRoot)
+    @BindView(R.id.llPdfRoot)
     LinearLayout llPdfRoot;
     private int startX = 0;
     private int startY = 0;

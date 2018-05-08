@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2016 JustWayward Team
  * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.justwayward.reader.R;
 import com.justwayward.reader.base.BaseRVActivity;
 import com.justwayward.reader.base.Constant;
@@ -38,6 +37,7 @@ import com.justwayward.reader.ui.contract.SubjectBookListDetailContract;
 import com.justwayward.reader.ui.easyadapter.SubjectBookListDetailBooksAdapter;
 import com.justwayward.reader.ui.presenter.SubjectBookListDetailPresenter;
 import com.justwayward.reader.view.recyclerview.adapter.RecyclerArrayAdapter;
+import com.yuyh.easyadapter.GlideApp;
 import com.yuyh.easyadapter.glide.GlideCircleTransform;
 
 import java.util.ArrayList;
@@ -45,8 +45,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 书单详情
@@ -55,20 +56,22 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
 
     private HeaderViewHolder headerViewHolder;
 
+    private Unbinder unbinder;
+
     static class HeaderViewHolder {
-        @Bind(R.id.tvBookListTitle)
+        @BindView(R.id.tvBookListTitle)
         TextView tvBookListTitle;
-        @Bind(R.id.tvBookListDesc)
+        @BindView(R.id.tvBookListDesc)
         TextView tvBookListDesc;
-        @Bind(R.id.ivAuthorAvatar)
+        @BindView(R.id.ivAuthorAvatar)
         ImageView ivAuthorAvatar;
-        @Bind(R.id.tvBookListAuthor)
+        @BindView(R.id.tvBookListAuthor)
         TextView tvBookListAuthor;
-        @Bind(R.id.btnShare)
+        @BindView(R.id.btnShare)
         TextView btnShare;
 
-        public HeaderViewHolder(View view) {
-            ButterKnife.bind(this, view);
+        public HeaderViewHolder(View view,Unbinder unbinder) {
+            unbinder = ButterKnife.bind(this, view);
         }
     }
 
@@ -126,7 +129,7 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
 
             @Override
             public void onBindView(View headerView) {
-                headerViewHolder = new HeaderViewHolder(headerView);
+                headerViewHolder = new HeaderViewHolder(headerView,unbinder);
             }
         });
 
@@ -140,7 +143,8 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
         headerViewHolder.tvBookListDesc.setText(data.getBookList().getDesc());
         headerViewHolder.tvBookListAuthor.setText(data.getBookList().getAuthor().getNickname());
 
-        Glide.with(mContext)
+        // TODO
+        GlideApp.with(mContext)
                 .load(Constant.IMG_BASE_URL + data.getBookList().getAuthor().getAvatar())
                 .placeholder(R.drawable.avatar_default)
                 .transform(new GlideCircleTransform(mContext))
@@ -215,7 +219,7 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(headerViewHolder);
+        unbinder.unbind();
         if (mPresenter != null) {
             mPresenter.detachView();
         }

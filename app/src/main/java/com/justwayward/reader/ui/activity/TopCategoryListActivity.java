@@ -36,16 +36,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by lfh on 2016/8/30.
  */
 public class TopCategoryListActivity extends BaseActivity implements TopCategoryListContract.View {
 
-    @Bind(R.id.rvMaleCategory)
+    @BindView(R.id.rvMaleCategory)
     RecyclerView mRvMaleCategory;
-    @Bind(R.id.rvFemaleCategory)
+    @BindView(R.id.rvFemaleCategory)
     RecyclerView mRvFeMaleCategory;
 
     @Inject

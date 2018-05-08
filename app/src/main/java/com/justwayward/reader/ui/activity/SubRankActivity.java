@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * @author yuyh.
@@ -58,9 +58,9 @@ public class SubRankActivity extends BaseActivity {
     private String all;
     private String title;
 
-    @Bind(R.id.indicatorSubRank)
+    @BindView(R.id.indicatorSubRank)
     RVPIndicator mIndicator;
-    @Bind(R.id.viewpagerSubRank)
+    @BindView(R.id.viewpagerSubRank)
     ViewPager mViewPager;
 
     private List<Fragment> mTabContents;

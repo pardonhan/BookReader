@@ -23,7 +23,7 @@ import com.justwayward.reader.base.BaseActivity;
 import com.justwayward.reader.component.AppComponent;
 import com.justwayward.reader.view.ProgressWebView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class FeedbackActivity extends BaseActivity {
 
@@ -31,7 +31,7 @@ public class FeedbackActivity extends BaseActivity {
         context.startActivity(new Intent(context, FeedbackActivity.class));
     }
 
-    @Bind(R.id.feedbackView)
+    @BindView(R.id.feedbackView)
     ProgressWebView feedbackView;
 
     @Override

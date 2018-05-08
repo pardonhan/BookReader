@@ -24,7 +24,8 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+
 
 /**
  * @author yuyh.
@@ -32,7 +33,7 @@ import butterknife.Bind;
  */
 public abstract class BaseCommuniteActivity extends BaseActivity implements SelectionLayout.OnSelectListener {
 
-    @Bind(R.id.slOverall)
+    @BindView(R.id.slOverall)
     SelectionLayout slOverall;
 
     protected List<List<String>> list;

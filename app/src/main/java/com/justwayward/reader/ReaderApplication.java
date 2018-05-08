@@ -56,19 +56,19 @@ public class ReaderApplication extends Application {
         super.onCreate();
         refWatcher = LeakCanary.install(this);
         sInstance = this;
-        initCompoent();
+        initComponent();
         AppUtils.init(this);
-        CrashHandler.getInstance().init(this);
+       // CrashHandler.getInstance().init(this);
         initPrefs();
         initNightMode();
-        //initHciCloud();
+        initHciCloud();
     }
 
     public static ReaderApplication getsInstance() {
         return sInstance;
     }
 
-    private void initCompoent() {
+    private void initComponent() {
         appComponent = DaggerAppComponent.builder()
                 .bookApiModule(new BookApiModule())
                 .appModule(new AppModule(this))

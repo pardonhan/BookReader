@@ -31,7 +31,7 @@ import com.justwayward.reader.utils.NetworkUtils;
 import com.justwayward.reader.wifitransfer.Defaults;
 import com.justwayward.reader.wifitransfer.ServerRunner;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -43,12 +43,12 @@ public class WifiBookActivity extends BaseActivity {
         context.startActivity(new Intent(context, WifiBookActivity.class));
     }
 
-    @Bind(R.id.mTvWifiName)
+    @BindView(R.id.mTvWifiName)
     TextView mTvWifiName;
-    @Bind(R.id.mTvWifiIp)
+    @BindView(R.id.mTvWifiIp)
     TextView mTvWifiIp;
 
-    @Bind(R.id.tvRetry)
+    @BindView(R.id.tvRetry)
     TextView tvRetry;
 
     @Override

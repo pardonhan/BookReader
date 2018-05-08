@@ -15,6 +15,7 @@
  */
 package com.justwayward.reader.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
@@ -32,15 +33,15 @@ import android.widget.ProgressBar;
 
 import com.justwayward.reader.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ProgressWebView extends LinearLayout {
 
-    @Bind(R.id.web_view)
+    @BindView(R.id.web_view)
     WebView mWebView;
 
-    @Bind(R.id.progress_bar)
+    @BindView(R.id.progress_bar)
     ProgressBar mProgressBar;
 
     private Context mContext;
@@ -82,6 +83,7 @@ public class ProgressWebView extends LinearLayout {
     }
 
 
+    @SuppressLint("JavascriptInterface")
     private void initWebview(String url) {
 
         mWebView.addJavascriptInterface(this, "android");

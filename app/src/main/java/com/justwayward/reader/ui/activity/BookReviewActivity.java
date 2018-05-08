@@ -25,7 +25,7 @@ import com.justwayward.reader.view.SelectionLayout;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 书评区
@@ -36,7 +36,7 @@ public class BookReviewActivity extends BaseCommuniteActivity {
         context.startActivity(new Intent(context, BookReviewActivity.class));
     }
 
-    @Bind(R.id.slOverall)
+    @BindView(R.id.slOverall)
     SelectionLayout slOverall;
 
     @Override

@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.justwayward.reader.R;
 import com.justwayward.reader.base.BaseRVActivity;
 import com.justwayward.reader.base.Constant;
@@ -44,6 +43,7 @@ import com.justwayward.reader.view.BookContentTextView;
 import com.justwayward.reader.view.SupportDividerItemDecoration;
 import com.justwayward.reader.view.XLHRatingBar;
 import com.justwayward.reader.view.recyclerview.adapter.RecyclerArrayAdapter;
+import com.yuyh.easyadapter.GlideApp;
 import com.yuyh.easyadapter.glide.GlideCircleTransform;
 import com.yuyh.easyadapter.glide.GlideRoundTransform;
 
@@ -52,7 +52,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -86,33 +86,33 @@ public class BookReviewDetailActivity extends BaseRVActivity<CommentList.Comment
     }
 
     static class HeaderViewHolder {
-        @Bind(R.id.ivAuthorAvatar)
+        @BindView(R.id.ivAuthorAvatar)
         ImageView ivAuthorAvatar;
-        @Bind(R.id.tvBookAuthor)
+        @BindView(R.id.tvBookAuthor)
         TextView tvBookAuthor;
-        @Bind(R.id.tvTime)
+        @BindView(R.id.tvTime)
         TextView tvTime;
-        @Bind(R.id.tvTitle)
+        @BindView(R.id.tvTitle)
         TextView tvTitle;
-        @Bind(R.id.tvContent)
+        @BindView(R.id.tvContent)
         BookContentTextView tvContent;
-        @Bind(R.id.rlBookInfo)
+        @BindView(R.id.rlBookInfo)
         RelativeLayout rlBookInfo;
-        @Bind(R.id.ivBookCover)
+        @BindView(R.id.ivBookCover)
         ImageView ivBookCover;
-        @Bind(R.id.tvBookTitle)
+        @BindView(R.id.tvBookTitle)
         TextView tvBookTitle;
-        @Bind(R.id.tvHelpfullYesCount)
+        @BindView(R.id.tvHelpfullYesCount)
         TextView tvHelpfullYesCount;
-        @Bind(R.id.tvHelpfullNoCount)
+        @BindView(R.id.tvHelpfullNoCount)
         TextView tvHelpfullNoCount;
-        @Bind(R.id.tvBestComments)
+        @BindView(R.id.tvBestComments)
         TextView tvBestComments;
-        @Bind(R.id.rvBestComments)
+        @BindView(R.id.rvBestComments)
         RecyclerView rvBestComments;
-        @Bind(R.id.tvCommentCount)
+        @BindView(R.id.tvCommentCount)
         TextView tvCommentCount;
-        @Bind(R.id.rating)
+        @BindView(R.id.rating)
         XLHRatingBar ratingBar;
 
         public HeaderViewHolder(View view) {
@@ -170,7 +170,8 @@ public class BookReviewDetailActivity extends BaseRVActivity<CommentList.Comment
 
     @Override
     public void showBookReviewDetail(final BookReview data) {
-        Glide.with(mContext)
+        // TODO
+        GlideApp.with(mContext)
                 .load(Constant.IMG_BASE_URL + data.review.author.avatar)
                 .placeholder(R.drawable.avatar_default)
                 .transform(new GlideCircleTransform(mContext))
@@ -181,7 +182,7 @@ public class BookReviewDetailActivity extends BaseRVActivity<CommentList.Comment
         headerViewHolder.tvTitle.setText(data.review.title);
         headerViewHolder.tvContent.setText(data.review.content);
 
-        Glide.with(mContext)
+        GlideApp.with(mContext)
                 .load(Constant.IMG_BASE_URL + data.review.book.cover)
                 .placeholder(R.drawable.cover_default)
                 .transform(new GlideRoundTransform(mContext))
