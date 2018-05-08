@@ -47,7 +47,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.justwayward.reader.R;
-import com.justwayward.reader.ReaderApplication;
 import com.justwayward.reader.base.BaseActivity;
 import com.justwayward.reader.base.Constant;
 import com.justwayward.reader.bean.BookMixAToc;
@@ -103,7 +102,6 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
-
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -232,8 +230,7 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
 
     @Override
     public int getLayoutId() {
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         statusBarColor = ContextCompat.getColor(this, R.color.reader_menu_bg_color);
         return R.layout.activity_read;
     }
